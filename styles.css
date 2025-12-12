@@ -1,0 +1,99 @@
+/* Mac-like Search Overlay Styles */
+
+/* Overlay backdrop */
+#yt-cmdk-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Search container */
+#yt-cmdk-search-container {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: scale(0.95);
+  animation: scaleIn 0.2s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Search input */
+#yt-cmdk-search-input {
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+#yt-cmdk-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Search icon hint */
+#yt-cmdk-search-hint {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  pointer-events: none;
+  display: none;
+}
+
+/* Keyboard hint at bottom */
+#yt-cmdk-hint {
+  padding: 12px 24px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Keyboard shortcut styling */
+.yt-cmdk-kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 0 2px;
+}

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Cmd+K Search",
+  "version": "1.0.0",
+  "description": "Open a Mac-like search overlay on YouTube with Cmd+K",
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end",
+      "all_frames": false,
+      "match_about_blank": false
+    }
+  ],
+  "host_permissions": ["*://*.youtube.com/*"]
+}
